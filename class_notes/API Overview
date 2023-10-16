@@ -1,0 +1,87 @@
+URL - Unified Resource Locator
+API - Application Programming Interface
+
+Types of Web Services:
+RESTful - JSON, XML
+SOAP - XML
+GraphQL - 
+
+Application Layers:
+- Frontend - reactjs, vuejs, html, css
+- Backend
+	- Web Services - Spring boot
+	- DB - oracle, sql, mysql, dynamodb, scylladb, mongodb, cosmosdb
+
+Frontend UI - 5%
+Request
+
+(Middleware / Middle Layer / Web Services/ Restful Web Services/ REST API)
+
+Backend 90%
+- Web Services - validate that request and return response
+	- checkUser()
+	- isValidRequest()
+	- searchDB(input)
+	- if(list.size() == 0){
+		showSimiliarItem();
+	}else{
+		showDBItem()
+	}
+
+- DB 5%
+
+
+Netflix:
+Session - create session, register device
+	- https://netflix.com/session/create
+	- https://netflix.com/session/devices/register
+Browser - find content, in demand content
+Playback - play, resume, stop
+
+Endpoints: 
+- search api - https://com.amzon/search?item="iphone17"
+
+HTTPS Request Method - POST, GET, PUT, DELETE, HEAD, PATCH
+
+DB Ops - Select - READ, Insert - CREATE, Update, Delete
+CURD - Basic Ops
+
+Payload - POST, PUT
+
+SAAS, PAAS, IAAS - AWS, Azure DevOps, IBM Cloud
+
+var personObj = {"name":"john", "age":30, "married":false}
+
+<parameter name = "name", value = "john"/>
+<parameter name = "age", value = 30/>
+<parameter name = "married", value = false/>
+
+Request : HTTP Methods, Request Payload / body, Request Headers (Authorization - basic / bearer / token), Params (Path, Query)
+
+Response : HTTP Response Status Code, Response Headers, Response body / payload
+
+HTTP Response Codes:
+ - Successful - 2**, 201 (Created), 200 (Success), 204 (No Content)
+ - Redirection - 3**, 309
+ - Client side error - 4**, 404 Not Found, 401 Authentication failed, 403 unauthorized
+ - Server side error - 5**, 500 Internal server error, 500 NPE
+
+
+URL - https://petstore.swagger.io/v2/pet/23/uploadImage
+Base URI + Resource / Endpoint = URL
+Base URI - https://petstore.swagger.io/v2
+Endpoint/Resource Locator - 
+pet endpoint : /pet/23/uploadImage
+store endpoint : /store/order
+
+Path param - only pass the value throug url
+Query Param - after ? or & key = value. Both will be passed
+
+
+
+HTTP Methods - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+REST vs SOAP - https://smartbear.com/blog/soap-vs-rest-whats-the-difference/#:~:text=SOAP%20(Simple%20Object%20Access%20Protocol,in%20response%20to%20SOAP's%20shortcomings.
+Swagger sample - https://petstore.swagger.io/#/
+DummyJson API - https://dummyjson.com/
+Json-Server - https://www.npmjs.com/package/json-server
+Json - server tutorial - https://www.youtube.com/watch?v=mAqYJF-yxO8
