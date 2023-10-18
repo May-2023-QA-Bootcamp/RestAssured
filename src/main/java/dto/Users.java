@@ -2,17 +2,14 @@ package dto;
 
 import java.util.List;
 
-public class Users extends Support{
+public class Users{
 	
 	private int page;
 	private int per_page;
 	private int total;
 	private int total_pages;
 	private List<Data> data;
-	
-	public Users() {
-		
-	}
+	private Support support;
 	
 	public int getPage() {
 		return page;
@@ -52,5 +49,13 @@ public class Users extends Support{
 	
 	public void setData(List<Data> data) {
 		this.data = data;
+	}
+	
+	public Support getSupport() {
+		return support;
+	}
+	
+	public void setSupport(Support support) {
+		this.support = support;
 	}
 }

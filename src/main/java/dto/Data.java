@@ -1,25 +1,12 @@
 package dto;
 
-public class Data extends Support{
+public class Data{
 
-	private Object data;
 	private int id;
 	private String email;
 	private String first_name;
 	private String last_name;
 	private String avatar;
-	
-	public Data() {
-		
-	}
-	
-	public Object getData() {
-		return data;
-	}
-	
-	public void setData(Object data) {
-		this.data = data;
-	}
 	
 	public int getId() {
 		return id;

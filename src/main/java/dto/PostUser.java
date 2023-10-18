@@ -1,10 +1,15 @@
 package dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 public class PostUser {
 
 	private String name;
 	private String job;
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String id;
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String createdAt;
 	
 	public String getName() {

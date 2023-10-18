@@ -1,6 +1,7 @@
 package unittest;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,6 +82,28 @@ public class PostUserAPITest {
 		InputStream inputStream = getClass().getClassLoader().getResourceAsStream("newUser.json");
 		
 		requestSpecification.body(inputStream);
+		
+		response = requestSpecification.post();
+		
+		response.prettyPrint();
+		
+		PostUser newUser = response.as(PostUser.class);
+		
+		System.out.println(newUser.getJob());
+	}
+	
+	@Test
+	@Disabled
+	public void postUserByteArrayBody() throws IOException {
+		requestSpecification = RestAssured.given();
+		requestSpecification.baseUri(baseUri);
+		requestSpecification.basePath(userEndpoint);
+		requestSpecification.contentType(ContentType.JSON);
+		requestSpecification.log().all();
+		
+		InputStream inputStream = getClass().getClassLoader().getResourceAsStream("newUser.json");
+		
+		requestSpecification.body(inputStream.readAllBytes());
 		
 		response = requestSpecification.post();
 		

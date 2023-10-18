@@ -2,21 +2,8 @@ package dto;
 
 public class Support {
 
-	private Object support;
 	private String url;
 	private String text;
-	
-	public Support() {
-		
-	}
-	
-	public void setSupport(Object support) {
-		this.support = support;
-	}
-	
-	public Object getSupport() {
-		return support;
-	}
 	
 	public void setUrl(String url) {
 		this.url = url;

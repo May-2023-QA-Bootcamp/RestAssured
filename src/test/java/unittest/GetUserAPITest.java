@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import dto.Data;
 import dto.Support;
+import dto.User;
 import dto.Users;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -114,7 +115,7 @@ public class GetUserAPITest {
 	}
 	
 	@Test
-	@Disabled
+	//@Disabled
 	public void convertToPojoGetUser() {
 		Response response = RestAssured.given()
 			.baseUri(baseUri)
@@ -126,20 +127,12 @@ public class GetUserAPITest {
 		
 		response.prettyPrint();
 		
-		JsonPath jsonPath = new JsonPath(response.asString());
-		//System.out.println(jsonPath.getString("data.firs_name"));
+		User user = response.as(User.class);
 		
-//		Data user = response.as(Data.class);
+		Data data = user.getData();
+		Support support = user.getSupport();
 		
-//		ObjectMapper mapper = new ObjectMapper();
-//		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//		
-//		Data user = mapper.convertValue(response.asString(), Data.class);
-		
-		Data user = jsonPath.getObject("data", Data.class);
-		Support support = jsonPath.getObject("support", Support.class);
-		
-		System.out.println("FirstName : " + user.getFirst_name());
+		System.out.println("FirstName : " + data.getFirst_name());
 		System.out.println("Support Text : " + support.getText());
 	}
 	
@@ -156,20 +149,14 @@ public class GetUserAPITest {
 		
 		response.prettyPrint();
 		
-		//JsonPath jsonPath = JsonPath.from(response.asInputStream());
-		//Users users = jsonPath.getObject("", Users.class);
-		
 		Users users = response.as(Users.class);
-		
-//		ObjectMapper mapper = new ObjectMapper();
-//		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//		Users users = mapper.convertValue(response, Users.class);
 		
 		System.out.println(users.getPage());
 		System.out.println(users.getData().get(2).getEmail());
 	}
 	
 	@Test
+	@Disabled
 	public void breakDownRequest_n_response() {
 		RequestSpecification requestSpecification;
 		Response response;
